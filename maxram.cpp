@@ -13,6 +13,7 @@ int main()
 	uint64_t maxRam = 0;
 	while (true)
 	{
+		// VirtualAlloc, virtualis memoriat allokal ami a "perzisztens" (hdd/ssd) helyen talalhato, hirtelen nagy allokacio, magas I/O muvelettel jar! 
 		if (void* freshlyAllocated = VirtualAlloc(nullptr, num, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE))
 		{
 			memset(freshlyAllocated, 8, num);
@@ -29,4 +30,5 @@ int main()
 
 	Sleep(3 * 1000); // 3 mp
 	return 42;
+
 }
