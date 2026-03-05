@@ -23,7 +23,8 @@ int main()
 		threadContainer[i] = CreateThread(nullptr, 0, think, nullptr, 0, nullptr);
 		if (threadContainer[i])
 		{
-			SetThreadPriority(threadContainer[i], THREAD_PRIORITY_ABOVE_NORMAL);
+			// A "ki kommentelt" fuggveny felakassza a gepet, csak akkor hivd, ha ujra akarod a gepet inditani 
+			// SetThreadPriority(threadContainer[i], THREAD_PRIORITY_ABOVE_NORMAL);
 		}
 	}
 
@@ -31,4 +32,5 @@ int main()
 	
 	delete[] threadContainer;
 	return 6;
+
 }
